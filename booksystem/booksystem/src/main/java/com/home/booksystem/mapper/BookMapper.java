@@ -10,6 +10,8 @@ public interface BookMapper {
 //    도서 목록 조회 쿼리 실행 메서드
     List<BookDTO> bookList();
 
+//    도서 등록 쿼리 실행 메서드
+    void regBook(BookDTO bookDTO);
 
 
 }

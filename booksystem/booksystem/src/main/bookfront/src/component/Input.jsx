@@ -1,9 +1,15 @@
 import React from 'react'
 
-const Input = () => {
+const Input = ({
+  type = 'text',
+  ...props
+}) => {
   return (
     <div>
-      <input type="text" />
+      <input 
+        type={type}
+        {...props}
+      />
     </div>
   )
 }

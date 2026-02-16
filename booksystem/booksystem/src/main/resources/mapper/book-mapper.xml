@@ -25,6 +25,7 @@
             , BOOK_STOCK
             , REG_DATE
         FROM BOOK
+        ORDER BY BOOK_NUM DESC
     </select>
 
     <!--도서 등록 쿼리-->

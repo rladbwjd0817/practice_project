@@ -17,4 +17,9 @@ public class BookSurvice {
         return bookMapper.bookList();
     }
 
+//    도서 등록 기능 실행 메서드
+    public void regBook(BookDTO bookDTO){
+        bookMapper.regBook(bookDTO);
+    }
+
 }
