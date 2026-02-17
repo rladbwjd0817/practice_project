@@ -46,6 +46,48 @@ public class BookController {
         }
     }
 
+//    상세조회 api
+//    url : (GET) localhost:8080/books/{bookNum}
+    @GetMapping("/{bookNum}")
+    public ResponseEntity<?> detailData(@PathVariable("bookNum") int bookNum){
+        try {
+            log.info(bookNum + "번 도서를 상세조회 합니다.");
+            BookDTO detailResult = bookSurvice.detailData(bookNum);
+            return ResponseEntity.status(HttpStatus.OK).body(detailResult);
+        }catch (Exception e){
+            log.error("상세조회 중 오류 발생", e);
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
+        }
+    }
+
+    // 도서 수정 api
+    // url : (PUT) localhost:8080/books/{bookNum}/update
+    @PutMapping("/{bookNum}/update")
+    public ResponseEntity<?> putBookData(@PathVariable("bookNum") @RequestBody BookDTO bookDTO){
+        try {
+            log.info("도서를 수정합니다.");
+            bookSurvice.putBookData(bookDTO);
+            return ResponseEntity.status(HttpStatus.OK).body(bookDTO);
+        }catch (Exception e){
+            log.error("도서 수정 중 오류 발생", e);
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
+        }
+    }
+
+    // 도서 삭제 api
+    // url : (DELETE) localhost:8080/books/{bookNum}
+    @DeleteMapping("/{bookNum}")
+    public ResponseEntity<?> deleteBookData(@PathVariable("bookNum") int bookNum){
+        try {
+            log.info(bookNum + "번 도서를 삭제했습니다.");
+            bookSurvice.deleteBookData(bookNum);
+            return ResponseEntity.status(HttpStatus.OK).body(bookNum);
+        }catch (Exception e){
+            log.error("도서 삭제 중 오류 발생", e);
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
+        }
+    }
+
 
 
 }

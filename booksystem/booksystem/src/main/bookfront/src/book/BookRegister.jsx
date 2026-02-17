@@ -12,7 +12,7 @@ const BookRegister = () => {
     author : '',
     publisher : '',
     bookPrice : '',
-    booksStock : '',
+    bookStock : '',
     bookIntro : ''
   })
 
@@ -89,8 +89,8 @@ const BookRegister = () => {
               <td>
                 <Input 
                   type='text'
-                  name='booksStock'
-                  value={regBook.booksStock}
+                  name='bookStock'
+                  value={regBook.bookStock}
                   onChange={e=>{newBookData(e)}}
                 />
               </td>

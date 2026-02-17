@@ -16,6 +16,7 @@ const BookList = () => {
 
   console.log(bookList);
 
+
   /* 마운트 시 바로 조회 */
   useEffect(() => {
     getList();
@@ -46,7 +47,9 @@ const BookList = () => {
                 return(
                   <tr key={book.bookNum}>
                     <td>{bookList.length - index}</td>
-                    <td>{book.bookTitle}</td>
+                    <td
+                      onClick={e => nav(`/detail/${book.bookNum}`)}
+                    >{book.bookTitle}</td>
                     <td>{book.author}</td>
                     <td>{book.publisher}</td>
                     <td>{book.bookPrice}</td>

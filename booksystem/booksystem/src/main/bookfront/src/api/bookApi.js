@@ -24,3 +24,24 @@ export const goRegData = async (regBook) => {
     console.log('등록 중 오류 발생', e)
   }
 }
+
+/* 도서 상세 조회 api */
+export const goDetail = async (bookNum) => {
+  try{
+    const response = await axios.get(`http://localhost:8080/books/${bookNum}`);
+    return response;
+  }catch(e){
+    console.log('상세조회 중 api 오류 발생', e);
+    alert('상세 조회 중 오류 발생!!');
+  }
+}
+
+/* 도서 수정 api */
+export const putData = async () => {
+  try{
+    const response = await axios.put();
+    return response;
+  }catch(e){
+    console.log('수정 중 api 오류 발생', e)
+  }
+}

@@ -47,6 +47,38 @@
         )
     </insert>
 
+    <!--상세 조회 쿼리-->
+    <select id="detailData" resultMap="book">
+        SELECT BOOK_NUM
+            , REG_DATE
+            , BOOK_TITLE
+            , AUTHOR
+            , PUBLISHER
+            , BOOK_PRICE
+            , BOOK_STOCK
+            , BOOK_INTRO
+        FROM BOOK
+        WHERE BOOK_NUM = #{bookNum}
+    </select>
+
+    <!--도서 수정 쿼리-->
+    <update id="putBookData">
+        UPDATE BOOK
+        SET
+            BOOK_TITLE = #{bookTitle}
+            , AUTHOR = #{author}
+            , PUBLISHER = #{publisher}
+            , BOOK_PRICE = #{bookPrice}
+            , BOOK_STOCK = #{bookStock}
+            , BOOK_INTRO = #{bookIntro}
+        WHERE BOOK_NUM = #{bookNum}
+    </update>
+
+    <!--도서 삭제 쿼리-->
+    <delete id="deleteBookData">
+        DELETE FROM BOOK
+        WHERE BOOK_NUM = #{bookNum}
+    </delete>
 
 
 
