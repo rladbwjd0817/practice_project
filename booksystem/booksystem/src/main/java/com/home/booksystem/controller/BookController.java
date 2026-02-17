@@ -63,9 +63,11 @@ public class BookController {
     // 도서 수정 api
     // url : (PUT) localhost:8080/books/{bookNum}/update
     @PutMapping("/{bookNum}/update")
-    public ResponseEntity<?> putBookData(@PathVariable("bookNum") @RequestBody BookDTO bookDTO){
+    public ResponseEntity<?> putBookData(@PathVariable("bookNum") int bookNum,
+                                             @RequestBody BookDTO bookDTO){
         try {
             log.info("도서를 수정합니다.");
+            bookDTO.setBookNum(bookNum);
             bookSurvice.putBookData(bookDTO);
             return ResponseEntity.status(HttpStatus.OK).body(bookDTO);
         }catch (Exception e){

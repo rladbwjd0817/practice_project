@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { goDetail } from '../api/bookApi';
+import { goDelete, goDetail } from '../api/bookApi';
 import { useNavigate, useParams } from 'react-router-dom';
 
 const BookDetail = () => {
@@ -21,6 +21,12 @@ const BookDetail = () => {
     }
     
     console.log(detailData);
+
+    // 삭제 함수 실행
+    const deleteData = async () => {
+      await goDelete(bookNum);
+      nav('/')
+    }
 
    /* JSON으로 자바에 받을때 bookNum을 문자열로 받기 */
    /* JSON.stringify('bookNum'); */
@@ -70,7 +76,10 @@ const BookDetail = () => {
           type='button'
           onClick={e => {nav(`/detail/${bookNum}/update`)}}
         >수정</button>
-        <button type='button'>삭제</button>
+        <button 
+          type='button'
+          onClick={e => {deleteData()}}
+        >삭제</button>
       </div>
     </div>
   )

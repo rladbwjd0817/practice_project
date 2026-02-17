@@ -37,11 +37,21 @@ export const goDetail = async (bookNum) => {
 }
 
 /* 도서 수정 api */
-export const putData = async () => {
+export const putData = async (bookNum, updateData) => {
   try{
-    const response = await axios.put();
+    const response = await axios.put(`http://localhost:8080/books/${bookNum}/update`, updateData);
     return response;
   }catch(e){
     console.log('수정 중 api 오류 발생', e)
+  }
+}
+
+// 도서 삭제 api
+export const goDelete = async (bookNum) => {
+  try{
+    const response = await axios.delete(`http://localhost:8080/books/${bookNum}`);
+    return response;
+  }catch(e){
+    console.log('삭제 중 api 오류 발생', e);
   }
 }

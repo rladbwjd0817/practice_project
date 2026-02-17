@@ -53,7 +53,10 @@ const BookList = () => {
                     <td>{book.author}</td>
                     <td>{book.publisher}</td>
                     <td>{book.bookPrice}</td>
-                    <td>{book.bookStock}</td>
+                    <td 
+                      style={{color : book.bookStock <= 5 ? 'red' : 'black'}}
+
+                    >{book.bookStock === 0 ? '품절' : book.bookStock}</td>
                     <td>{book.regDate}</td>
                   </tr>
                 )

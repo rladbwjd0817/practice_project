@@ -1,8 +1,11 @@
 import React, { useState } from 'react'
 import Input from '../component/Input'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
+import { putData } from '../api/bookApi';
 
 const BookUpdate = () => {
+  const {bookNum} = useParams();
+
   const nav = useNavigate();
 
   /* input에 입력할 데이터 저장할 state 변수 */
@@ -16,7 +19,7 @@ const BookUpdate = () => {
   });
 
   /* 입력받은 데이터 저장할 함수 */
-  const handleUpdateData = () => {
+  const handleUpdateData = (e) => {
     setUpdateData({
       ...updateData,
       [e.target.name] : e.target.value
@@ -24,9 +27,14 @@ const BookUpdate = () => {
   }
 
   /* 수정버튼 클릭 시 수정 실행하는 함수 */
-  const goUpdate = () => {
-    
+  const goUpdate = async () => {
+    const response = await putData(bookNum, updateData);
+    nav(`/detail/${bookNum}`)
   }
+
+  console.log('bookNum: ', bookNum);
+  console.log('updateData: ', updateData);
+
 
   return (
     <div>
@@ -39,37 +47,63 @@ const BookUpdate = () => {
             <tr>
               <td>도서명</td>
               <td>
-                <Input />
+                <Input 
+                  name= 'bookTitle'
+                  value= {updateData.bookTitle}
+                  onChange={e => handleUpdateData(e)}
+                />
               </td>
             </tr>
             <tr>
               <td>저자</td>
               <td>
-                <Input />
+                <Input 
+                  name= 'author'
+                  value= {updateData.author}
+                  onChange={e => handleUpdateData(e)}
+                />
               </td>
             </tr>
             <tr>
               <td>출판사</td>
               <td>
-                <Input />
+                <Input 
+                  name= 'publisher'
+                  value= {updateData.publisher}
+                  onChange={e => handleUpdateData(e)}
+                />
               </td>
             </tr>
             <tr>
               <td>가격</td>
               <td>
-                <Input type='number' />
+                <Input 
+                  type='number' 
+                  name= 'bookPrice'
+                  value= {updateData.bookPrice}
+                  onChange={e => handleUpdateData(e)}
+                />
               </td>
             </tr>
             <tr>
               <td>재고수량</td>
               <td>
-                <Input type='number' />
+                <Input 
+                  type='number' 
+                  name= 'bookStock'
+                  value= {updateData.bookStock}
+                  onChange={e => handleUpdateData(e)}
+                />
               </td>
             </tr>
             <tr>
               <td>도서소개</td>
               <td>
-                <textarea></textarea>
+                <textarea
+                  name= 'bookIntro'
+                  value= {updateData.bookIntro}
+                  onChange={e => handleUpdateData(e)}
+                ></textarea>
               </td>
             </tr>
           </tbody>
@@ -82,7 +116,7 @@ const BookUpdate = () => {
         >목록가기</button>
         <button 
           type='button'
-          onClick={e => {}}
+          onClick={e => {goUpdate()}}
         >수정완료</button>
       </div>
     </div>
