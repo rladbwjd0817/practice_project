@@ -55,3 +55,13 @@ export const goDelete = async (bookNum) => {
     console.log('삭제 중 api 오류 발생', e);
   }
 }
+
+/* 검색 api */
+export const goSearch = async (keyword) => {
+  try{
+    const response = await axios.get('http://localhost:8080/books/search', {params: {keyword : keyword}});
+    return response;
+  }catch(e){
+    console.log('검색 중 오류 발생', e);
+  }
+}

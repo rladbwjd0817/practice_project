@@ -1,12 +1,22 @@
 import React, { useEffect, useState } from 'react'
-import { goList } from '../api/bookApi';
+import { goList, goSearch } from '../api/bookApi';
 import { useNavigate } from 'react-router-dom';
+import Input from '../component/Input'
+import styles from './Book.module.css'
+import { PiBooks } from 'react-icons/pi';
+import { IoSearch } from "react-icons/io5";
 
 const BookList = () => {
   const nav = useNavigate();
 
   /* 조회한 도서 데이터 저장할 state 변수 */
   const [bookList, setBookList] = useState([]);
+
+  /* 검색한 데이터 저장할 state 변수 */
+  const [searchData, setSearchData] = useState([]);
+
+  /* keyword state 함수 */
+  const [keyword, setKeyword] = useState('')
 
   /* 조회 실행 함수 */
   const getList = async () => {
@@ -15,7 +25,15 @@ const BookList = () => {
   }
 
   console.log(bookList);
+  console.log(searchData);
+  console.log(keyword);
+  
 
+  /* 검색 실행 함수 */
+  const getSearch = async () => {
+    const response = await goSearch(keyword);
+    setSearchData(response.data);
+  }
 
   /* 마운트 시 바로 조회 */
   useEffect(() => {
@@ -23,14 +41,32 @@ const BookList = () => {
   }, []);
 
   return (
-    <div>
+    <div className={styles.container}>
       <div>
-        <h2>도서 목록 List</h2>
+        <h2> 
+          <PiBooks className={styles.icon} /> 
+          Book List 
+          <PiBooks className={styles.icon} />
+        </h2>
       </div>
-      <div>
+      <div className={styles.search_div}>
+        <div className={styles.input_wrap}>
+          <IoSearch className={styles.search_icon}/>
+          <Input 
+            className={styles.search_Input}
+            onChange={e => {setKeyword(e.target.value)}}
+            onKeyDown={e => {
+              if(e.key === 'Enter'){
+                getSearch();
+              }
+            }}
+          />
+        </div>
+      </div>
+      <div className={styles.table_div}>
         <table>
-          <thead>
-            <tr>
+          <thead className={styles.title_thead}>
+            <tr >
               <td>No</td>
               <td>도서명</td>
               <td>저자</td>
@@ -40,10 +76,10 @@ const BookList = () => {
               <td>등록일</td>
             </tr>
           </thead>
-          <tbody>
+          <tbody className={styles.tbody_div}>
             {/* list map 돌리기 */}
             {
-              bookList.map((book, index) => {
+              (searchData.length > 0 ? searchData : bookList).map((book, index) => {
                 return(
                   <tr key={book.bookNum}>
                     <td>{bookList.length - index}</td>
@@ -67,6 +103,7 @@ const BookList = () => {
       </div>
       <div>
         <button 
+          className={styles.reg_button}
           type='button'
           onClick={e => nav('/reg')}
         >도서등록</button>

@@ -90,6 +90,20 @@ public class BookController {
         }
     }
 
+//    검색 api
+//    url : localhost:8080/books/search
+    @GetMapping("/search")
+    public ResponseEntity<?> searchData(@RequestParam String keyword){
+        try {
+            log.info("검색을 실행합니다.");
+            List<BookDTO> searchResult = bookSurvice.searchData(keyword);
+            return ResponseEntity.status(HttpStatus.OK).body(searchResult);
+        }catch (Exception e){
+            log.error("검색 중 오류 발생", e);
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
+        }
+    }
+
 
 
 }

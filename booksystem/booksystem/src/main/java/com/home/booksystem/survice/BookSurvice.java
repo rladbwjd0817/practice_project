@@ -37,4 +37,9 @@ public class BookSurvice {
         bookMapper.deleteBookData(bookNum);
     }
 
+//    검색 기능 실행 메서드
+    public List<BookDTO> searchData(String keyword){
+        return bookMapper.searchData(keyword);
+    }
+
 }

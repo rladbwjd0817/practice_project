@@ -22,4 +22,7 @@ public interface BookMapper {
 
 //    도서 삭제 쿼리 실행 메서드
     void deleteBookData(int bookNum);
+
+//    검색 쿼리 실행 메서드
+    List<BookDTO> searchData(String keyword);
 }

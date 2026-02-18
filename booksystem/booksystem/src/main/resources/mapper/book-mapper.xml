@@ -80,6 +80,19 @@
         WHERE BOOK_NUM = #{bookNum}
     </delete>
 
+    <!--검색 쿼리-->
+    <select id="searchData" resultMap="book">
+        SELECT BOOK_NUM
+            , REG_DATE
+            , BOOK_TITLE
+            , AUTHOR
+            , PUBLISHER
+            , BOOK_PRICE
+            , BOOK_STOCK
+            , BOOK_INTRO
+        FROM BOOK
+        WHERE BOOK_TITLE LIKE CONCAT('%', #{keyword}, '%')
+    </select>
 
 
 
