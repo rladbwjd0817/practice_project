@@ -18,6 +18,27 @@ const BookRegister = () => {
 
   console.log(regBook);
 
+  /* input 태그에 선택한 파일을 state 변수에 저장 -> 파일 통째로 저장*/
+  const [fileData, setFileData] = useState(null);
+
+  /* 도서 정보(문자, 숫자) + 파일정보 모두를 담을 수 있는 FormData() 객체  생성 */
+  const regForm = new FormData();
+
+  /* FormData()객체에 내용 저장할 함수 */
+  const postRegBook = async () => {
+    regForm.append('bookTitle', regBook.bookTitle)
+    regForm.append('author', regBook.author)
+    regForm.append('publisher', regBook.publisher)
+    regForm.append('bookPrice', regBook.bookPrice)
+    regForm.append('bookStock', regBook.bookStock)
+    regForm.append('bookIntro', regBook.bookIntro)
+
+    regForm.append('file', fileData);
+
+    const response = await goRegData(regForm);
+  }
+  console.log('fileData - ', fileData);
+
   /* 입력한 데이터 저장할 함수 */
   const newBookData = (e) => {
     setRegBook({
@@ -107,6 +128,13 @@ const BookRegister = () => {
             </tr>
           </tbody>
         </table>
+      </div>
+      <div>
+        {/* 단일 파일 업로드 */}
+        <input 
+          type="file" 
+          onChange={e => {setFileData(e.target.files[0])}}
+        />
       </div>
       <div>
         <button

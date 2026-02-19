@@ -16,9 +16,13 @@ export const goList = async () => {
 /**
  * 도서 등록 api
  */
-export const goRegData = async (regBook) => {
+export const goRegData = async (regForm) => {
   try{
-    const response = axios.post('http://localhost:8080/books', regBook)
+    const fileConfig = {
+      headers : {'Content-Type' : 'multipart/form-data'}
+    }
+
+    const response = axios.post('http://localhost:8080/books', regForm, fileConfig)
     alert('도서가 등록되었습니다.')
   }catch(e){
     console.log('등록 중 오류 발생', e)
