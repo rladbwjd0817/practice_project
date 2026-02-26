@@ -16,5 +16,6 @@ public class ItemDTO {
     private String regname;
     private String itemIntro;
     private LocalDateTime regdate;
+    private int itemCnt;
 
 }

@@ -11,6 +11,7 @@
      <result column="REGNAME" property="regname"/>
      <result column="ITEM_INTRO" property="itemIntro"/>
      <result column="REGDATE" property="regdate"/>
+     <result column="ITEM_CNT" property="itemCnt"/>
  </resultMap>
 
     <!--전체 상품 목록 조회 쿼리-->
@@ -20,6 +21,7 @@
             , ITEM_PRICE
             , REGNAME
             , REGDATE
+            , ITEM_CNT
           FROM ITEM_BOARD
          ORDER BY ITEM_NO DESC
     </select>
@@ -30,12 +32,14 @@
              ITEM_NAME
             , ITEM_PRICE
             , REGNAME
-            ,ITEM_INTRO
+            , ITEM_INTRO
+            , ITEM_CNT
         ) VALUES(
             #{itemName}
-            ,#{itemPrice}
-            ,#{regname}
-            ,#{itemIntro}
+            , #{itemPrice}
+            , #{regname}
+            , #{itemIntro}
+            , #{itemCnt}
         )
     </insert>
 
@@ -47,6 +51,7 @@
             , ITEM_PRICE
             , ITEM_NAME
             , ITEM_INTRO
+            , ITEM_CNT
           FROM ITEM_BOARD
          WHERE ITEM_NO = #{itemNo}
     </select>
