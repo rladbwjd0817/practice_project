@@ -1,8 +1,8 @@
 import React from 'react'
-import styles from './Home.module.css'
+import styles from './Landing.module.css'
 import Button from '../../component/common/Button'
 
-const Home = () => {
+const Landing = () => {
   return (
     <div className={styles.container}>
       <div className={styles.homeImg_div}>
@@ -30,4 +30,4 @@ const Home = () => {
   )
 }
 
-export default Home
+export default Landing
