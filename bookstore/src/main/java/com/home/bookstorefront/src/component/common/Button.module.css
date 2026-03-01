@@ -1,0 +1,56 @@
+.button{
+  border-radius: 4px;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  font-size: 1.0rem;
+
+}
+
+/* 버튼 색상 별 디자인 */
+.gold{
+  background-color: rgb(255, 231, 97);
+}
+
+.gold:hover{
+  background-color: gold;
+}
+
+.gray{
+  background-color: lightgray;
+}
+
+.gray:hover{
+  background-color: lightslategray;
+}
+
+.navy{
+  background-color: navy;
+  color: white;
+}
+
+.navy:hover{
+  background-color: navy;
+}
+
+.white{
+  background-color: white;
+}
+
+.white:hover{
+  background-color: #fffece;
+}
+
+/* 버튼 크기별 디자인 */
+.small{
+  padding: 0.4rem 1rem;
+}
+
+.medium{
+  padding: 0.6rem 1.8rem;
+}
+
+.disabled{
+  opacity: 0.7;
+  cursor: not-allowed;
+}

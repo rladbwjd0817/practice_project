@@ -1,0 +1,85 @@
+@font-face {
+    font-family: 'JeonjuCraftMyungjo';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2310@1.0/JeonjuCraftMjL.woff2') format('woff2');
+    font-weight: 300;
+    font-display: swap;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container{
+  width: 100%;
+}
+
+.homeImg_div > img{
+  width: 100%;
+  height: 940px;
+  position: relative;
+}
+
+.homeLogo{
+  position: absolute;
+  top: 7px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.homeLogo > img{
+  width: 1250px;
+}
+
+.title_div{
+  color: white;
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-family: 'JeonjuCraftMyungjo';
+}
+
+.title_div :first-child{
+  font-family: 'JeonjuCraftMyungjo';
+  font-size: 7.7rem;
+  margin-bottom: 30px;
+  font-weight: bold;
+  text-align: center;
+  color: white;
+  text-shadow:
+  0 0 10px rgba(0, 0, 0, 0.6),
+  0 0 20px rgba(0, 0, 0, 0.6),
+  0 0 40px rgba(255, 220, 150, 0.3);
+}
+
+.title_div :last-child{
+  font-family: 'JeonjuCraftMyungjo';
+  font-size: 3.5rem;
+  margin-top: 30px;
+  text-align: center;
+  font-weight: bold;
+  letter-spacing: 0.1rem;
+  text-shadow: 
+  0 0 10px rgba(0, 0, 0, 0.6),
+  0 0 20px rgba(0, 0, 0, 0.6),
+  0 0 40px rgba(255, 220, 150, 0.3);
+}
+
+.btn_div{
+  position: absolute;
+  bottom: 35%;
+  left: 50%;
+  transform: translateX(-50%);  
+}
+
+.btn_div > button{
+  font-family: 'JeonjuCraftMyungjo';
+  font-size: 1.5rem;
+  font-weight: bold;
+  letter-spacing: 0.07rem;
+}
