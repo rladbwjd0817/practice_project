@@ -1,7 +1,7 @@
 @font-face {
-    font-family: 'JeonjuCraftMyungjo';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2310@1.0/JeonjuCraftMjL.woff2') format('woff2');
-    font-weight: 300;
+    font-family: 'Ridibatang';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.0/RIDIBatang.woff') format('woff');
+    font-weight: normal;
     font-display: swap;
 }
 
@@ -23,32 +23,29 @@
 
 .homeLogo{
   position: absolute;
-  top: 7px;
+  top: 8%;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translateX(-51%);
 }
 
 .homeLogo > img{
-  width: 1250px;
+  width: 400px;
 }
 
 .title_div{
+  height: 300px;
+  margin-top: 3px;
   color: white;
   position: absolute;
-  top: 25%;
+  top: 40%;
   left: 50%;
   transform: translateX(-50%);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  font-family: 'JeonjuCraftMyungjo';
+  font-family: 'Ridibatang';
 }
 
-.title_div :first-child{
-  font-family: 'JeonjuCraftMyungjo';
-  font-size: 7.7rem;
-  margin-bottom: 30px;
-  font-weight: bold;
+.title_div > p{
+  font-size: 9.9rem;
+  margin-top: 10px;
   text-align: center;
   color: white;
   text-shadow:
@@ -57,13 +54,17 @@
   0 0 40px rgba(255, 220, 150, 0.3);
 }
 
-.title_div :last-child{
-  font-family: 'JeonjuCraftMyungjo';
-  font-size: 3.5rem;
-  margin-top: 30px;
+.logo_letter{
+  position: absolute;
+  bottom: 23%;
+  left: 50%;
+  transform: translateX(-48%);
+}
+
+.logo_letter > img{
+  width: 550px;
+  padding-bottom: 40px;
   text-align: center;
-  font-weight: bold;
-  letter-spacing: 0.1rem;
   text-shadow: 
   0 0 10px rgba(0, 0, 0, 0.6),
   0 0 20px rgba(0, 0, 0, 0.6),
@@ -72,14 +73,42 @@
 
 .btn_div{
   position: absolute;
-  bottom: 35%;
+  bottom: 20%;
   left: 50%;
   transform: translateX(-50%);  
 }
 
+/* 버튼에만 특수효과 부여 */
 .btn_div > button{
-  font-family: 'JeonjuCraftMyungjo';
+  position: relative; /* 반짝이 위치기준 */
+  overflow: hidden;
+
+  font-family: 'Ridibatang';
   font-size: 1.5rem;
   font-weight: bold;
   letter-spacing: 0.07rem;
+
+}
+
+.btn_div > button::after{
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -100%;
+  width: 50%;
+  height: 200%;
+  background: linear-gradient(
+    to right, 
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.5) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: rotate(30deg);
+  animation: shimmer 4s infinite; /* 여기서만 실행 */
+}
+
+@keyframes shimmer{
+  0% {left: -100%}
+  20% {left: 150%} /* 스윽 지나가는 속도 */
+  100%{left: 150%;} /* 나머지 시간은 대기 */
 }

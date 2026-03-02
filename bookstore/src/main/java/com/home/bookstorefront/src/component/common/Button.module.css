@@ -9,11 +9,11 @@
 
 /* 버튼 색상 별 디자인 */
 .gold{
-  background-color: rgb(255, 231, 97);
+  background-color: #FFD700;
 }
 
 .gold:hover{
-  background-color: gold;
+  background-color: rgb(255, 230, 91);
 }
 
 .gray{

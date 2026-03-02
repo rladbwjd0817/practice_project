@@ -1,22 +1,68 @@
+@font-face {
+    font-family: 'Ridibatang';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.0/RIDIBatang.woff') format('woff');
+    font-weight: normal;
+    font-display: swap;
+}
+
 .container{
   border: 1px solid black;
   width: 100%;
+  background-color: #111144;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+
+}
+
+.header_logo{
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  height: 80px;
+  cursor: pointer;
+}
+
+.header_logo > img{
+  margin-top: 5px;
+  margin-left: 4px;
+  width: 80px; 
+  height: auto; /* 비율유지 */
+  display: block; /* 인라인 요소의 하단 여백 제거 */
+  object-fit: contain; /* 이미지 찌그러짐 방지 */
+  flex-shrink: 0; /* 이미지 압축되지 않도록 보호 */
+}
+
+.header_logo span:nth-child(2){
+  font-size: 1.6rem;
+  font-family: 'Ridibatang';
+  color: #FFD700;
+  margin-right: 10px;
+}
+
+.header_logo span:nth-child(3){
+  font-family: 'Ridibatang';
+  margin-top: 8px;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+}
+
+.menu{
+  display: flex;
 }
 
 .menu > ul{
   display: flex;
   justify-content: end;
+  align-items: center;
   gap: 30px;
   margin-right: 120px;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
 }
 
-.img_div > img{
-  width: 100%;
-  height: 200px;
-  background-image: '../../public/booksotre_banner.png';
-  background-size: contain;
-  background-position: center 70%;
-  background-repeat: no-repeat;
-  image-rendering: pixelated;
+.menu > ul > li{
+  cursor: pointer;
 }
+
+
+
