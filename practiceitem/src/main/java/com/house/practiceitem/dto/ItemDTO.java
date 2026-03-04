@@ -1,10 +1,12 @@
 package com.house.practiceitem.dto;
 
+import com.house.practiceitem.member.dto.MemberDTO;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Getter
 @Setter
@@ -18,4 +20,6 @@ public class ItemDTO {
     private LocalDateTime regdate;
     private int itemCnt;
 
+//    한 구매자 당 여러 상품 구매(1 : 다)
+    private String memName;
 }
