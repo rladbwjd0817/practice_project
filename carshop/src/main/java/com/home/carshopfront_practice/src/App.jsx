@@ -1,6 +1,6 @@
 import { Route, Routes } from "react-router-dom"
 import MainLayout from "./components/layout/MainLayout"
-import Landing from "./pages/home/Landing"
+import Landing from "./pages/landing/Landing"
 
 
 

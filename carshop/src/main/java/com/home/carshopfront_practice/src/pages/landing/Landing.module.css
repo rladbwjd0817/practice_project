@@ -1,14 +1,26 @@
+@font-face {
+    font-family: 'NexenTire';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_eight@1.0/NEXEN_TIRE_Regular.woff') format('woff');
+    font-weight: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'KblJumpExtended';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2601-5@1.0/KBLJump_EB_ExtendedTTF.woff2') format('woff2');
+    font-weight: normal;
+    font-display: swap;
+}
+
 *{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  
 }
 
 .container{
   width: 100%;
   background-color: black;
-  /* position: relative */
 }
 
 .landing_img{
@@ -19,16 +31,32 @@
   width: 100%;
   height: 940px;
   object-fit: cover;
-  z-index: 1;
+  z-index: -1;
 }
 
-.landing_car{
+.logo_div{
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
   position: absolute;
-  top: 37%;
-  left: 32%;
+  top: 15%;
+  left: 42%;
 }
 
-.landing_car::before{
+.logo_div > img{
+  width: 300px;
+  margin-left: 13%;
+}
+
+.logo_div > p{
+  background: linear-gradient(to bottom, #c6e4ff 0%, #6aa0cf 40%, #0c2a52 100%);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 4.0rem;
+  font-family: 'KblJumpExtended';
+}
+
+.glow_effect{
   content: "";
   position: absolute;
   top: 50%;
@@ -36,25 +64,67 @@
   transform: translate(-50%, -50%);
   width: 100%;
   height: 100%;
-  background: radial-gradient(circle, 
-    rgba(0, 102, 255, 1.0) 0%,
+  background: radial-gradient(circle,
+    rgba(0, 102, 255, 0.2) 0%,
     rgba(0, 0, 0, 0) 70%
   );
   filter: blur(40px);
-  z-index: -1;
+  z-index: 1;
+  pointer-events: none;
+} 
+
+
+.landing_car{
+  position: absolute;
+  top: 39%;
+  left: 32%;
 }
 
 .landing_car > img{
   position: absolute;
-  top: 37%;
+  top: 39%;
   left: 32%;
   width: 800px;
-  transform: rotate(-10deg);
+  transform: rotate(5deg);
   z-index: 10;
   pointer-events: none;
-  
 }
 
-.landing_car > img:hover{
-  transition: all 0.5s ease-in-out 0s;
+.btn_div{
+  position: absolute;
+  bottom: 20%;
+  left: 54%;
+  transform: translateX(-50%);
+}
+
+.btn_div > button{
+  position: relative; /* 반짝이 위치기준 */
+  overflow: hidden;
+
+  font-size: 1.5rem;
+  font-family: 'NexenTire';
+  z-index: 1;
+}
+
+.btn_div > button::after{
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -100%;
+  width: 50%;
+  height: 200%;
+  background: linear-gradient(
+    to right, 
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.5) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: rotate(30deg);
+  animation: shimmer 4s infinite; /* 여기서만 실행 */
+}
+
+@keyframes shimmer{
+  0% {left: -100%}
+  20% {left: 150%} /* 스윽 지나가는 속도 */
+  100%{left: 150%;} /* 나머지 시간은 대기 */
 }

@@ -1,0 +1,56 @@
+.button{
+  border-radius: 4px;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  font-size: 1.0rem;
+}
+
+/* 버튼 색상 별 디자인 */
+.black{
+  background-color: rgba(0, 0, 0, 0.671);
+  color: white;
+}
+
+.black:hover{
+  background-color: rgb(68, 68, 68);
+}
+
+.white{
+  background-color: white;
+}
+
+.white:hover{
+  background-color: whitesmoke;
+}
+
+.navy{
+  border: 2px solid #001838;
+  outline: 4px solid rgb(218, 218, 218);
+  background-color: #0c2a52;
+  color: white;
+}
+
+.navy:hover{
+  background-color: #001838;
+}
+
+/* 사이즈별 디자인 */
+.small{
+  padding: 0.4rem 1rem;
+}
+
+.medium{
+  padding: 0.6rem 1.8rem;
+}
+
+/* landing 홈페이지용 */
+.big{
+  width: 300px;
+  padding: 1.2rem 1.5rem;
+}
+
+.disabled{
+  opacity: 0.7;
+  cursor: not-allowed;
+}
