@@ -3,7 +3,6 @@ import styles from './Landing.module.css'
 import Button from '../../components/common/Button'
 import { useNavigate } from 'react-router-dom'
 
-
 //////////* 접속 시 맨 처음 보여지는 화면 *//////////
 const Landing = () => {
   const nav = useNavigate()
@@ -32,9 +31,9 @@ const Landing = () => {
       {/* 메인홈페이지로 이동하는 버튼 */}
       <div className={styles.btn_div}>
         <Button 
-          title='VELORA 둘러보기'
+          title='>> VELORA 둘러보기'
           variant='navy'
-          size='big'
+          size='landing'
           onClick={e => nav('/velora')}
         />
       </div>

@@ -1,0 +1,126 @@
+@font-face {
+    font-family: 'NanumSquareNeo';
+    src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-aLt.woff2);
+    font-weight: 300;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'OneStoreMobileGothicTitleFont';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/ONE-Mobile-Title.woff') format('woff');
+    font-weight: normal;
+    font-display: swap;
+}
+
+.container{
+  width: 100%;
+  height: 100vh;
+  background-color: rgb(243, 243, 243);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.login_div{
+  background-color: white;
+  border: 1px solid white;
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.login_div > div:nth-child(2){
+  font-family: 'OneStoreMobileGothicTitleFont';
+  margin: 10px 0px 20px 0px;
+}
+
+.login_logo > img{
+  width: 120px;
+  padding: 50px 10px 20PX 10PX;
+}
+
+.loginEmail_div{
+  display: block;
+  position: relative;
+  margin: 10px 0px;
+}
+
+.loginEmail_div > input{
+  padding: 10px 32px;
+  font-size: 0.9rem;
+  font-family: 'NanumSquareNeo';
+  font-weight: 600;
+}
+
+.loginEmail_icon{
+  position: absolute;
+  top: 30%;
+  left: 3%;
+  color: gray;
+  font-size: 1.1rem;
+}
+
+.loginPw_div{
+  position: relative;
+  display: block;
+  margin: 2px 0px 20px 0px;
+}
+
+.loginPw_div > input{
+  padding: 10px 32px;
+  font-size: 0.9rem;
+  font-family: 'NanumSquareNeo';
+  font-weight: 600;
+}
+
+.loginPw_icon{
+  position: absolute;
+  top: 30%;
+  left: 3%;
+  color: gray;
+  font: 1.1rem;
+}
+
+.login_search{
+  display: flex;
+  justify-content: end;
+  margin-left: 45%;
+  margin-bottom: 50px;
+  font-size: 0.9rem;
+}
+
+.loginBtn_div > button{
+  color: gray;
+  font-size: 1.1rem;
+  font-family: 'NanumSquareNeo';
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.line_div{
+  border: 1px solid rgb(235, 234, 234);
+  width: 450px;
+  margin: 40px 0px;
+}
+
+.joinInfo_div{
+  background-color: rgb(238, 238, 238);
+  margin-bottom: 50px;
+  width: 450px;
+  border-radius: 4px;
+  padding: 30px;
+  font-size: 0.9rem;
+}
+
+.join_div{
+  display: flex;
+  gap: 5px;
+}
+
+.join_div:last-child{
+  margin-top: 10px;
+}
+

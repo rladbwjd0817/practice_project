@@ -1,0 +1,24 @@
+.input{
+  border: 1px solid lightgray;
+  border-radius: 4px;
+}
+
+.input:hover{
+  outline: 1px solid black;
+}
+
+/* 사이즈별 속성 */
+.short{
+  width: 200px;
+  height: 25px;
+}
+
+.medium{
+  width: 300px;
+  height: 35px;
+}
+
+.long{
+  width: 450px;
+  height: 45px;
+}

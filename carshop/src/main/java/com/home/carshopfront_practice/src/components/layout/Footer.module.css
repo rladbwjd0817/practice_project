@@ -1,0 +1,74 @@
+@font-face {
+    font-family: 'NexenTire';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_eight@1.0/NEXEN_TIRE_Regular.woff') format('woff');
+    font-weight: normal;
+    font-display: swap;
+}
+
+.container{
+  background-color: black;
+  border: 1px solid white;
+  color: white;
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  gap: 50px;
+  padding: 10px 40px;
+}
+
+.footer_logo{
+  display: flex;
+  gap: 2px;
+  margin-top: 12px;
+}
+
+.footer_logo > img{
+  width: 100px;
+  height: 50px;
+}
+
+.footer_logo > p{
+  font-size: 1.1rem;
+  font-family: 'NexenTire';
+  margin-top: 10px;
+}
+
+.footer_info > div{
+  display: flex;
+}
+
+.footer_info > p{
+  margin-bottom: 7px;
+}
+
+.footer_info_menu{
+  margin-bottom: 7px;
+}
+
+.footer_info_menu > p{
+  cursor: pointer;
+}
+
+.footer_info_menu > p:hover{
+  color: rgb(185, 185, 185);
+}
+
+.footer_info_icons{
+  margin-top: 5px;
+}
+
+.footer_copyright{
+  display: flex;
+  gap: 5px;
+  letter-spacing: 0.5px;
+}
+
+.footer_sns_icons{
+  font-size: 1.5rem;
+  margin-top: 20px;
+}
+
+.sns_icons{
+  margin-right: 20px;
+  cursor: pointer;
+}

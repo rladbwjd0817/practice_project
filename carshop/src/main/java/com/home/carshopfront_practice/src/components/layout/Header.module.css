@@ -1,0 +1,61 @@
+@font-face {
+    font-family: 'NexenTire';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_eight@1.0/NEXEN_TIRE_Regular.woff') format('woff');
+    font-weight: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: '11StreetGothic';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2601-4@1.1/11StreetGothic-KorLight.woff2') format('woff2');
+    font-weight: 300;
+    font-display: swap;
+}
+
+.container{
+  background-color: black;
+  color: white;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 40px 10px 10px;
+  outline: none;
+}
+
+.header_logo{
+  display: flex;
+  cursor: pointer;
+}
+
+.header_logo img{
+  width: 150px;
+}
+
+.header_logo p{
+  font-size: 1.5rem;
+  margin-top: 15px;
+  font-family: 'NexenTire';
+}
+
+.header_menu > ul{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 35px;
+}
+
+.header_menu li{
+  margin-top: 15px;
+  padding-right: 40px;
+  font-size: 1.4rem;
+  cursor: pointer;
+  font-family: '11StreetGothic';
+  font-weight: bold;
+  letter-spacing: 0.1rem;
+  color: white;
+  text-decoration-line: none;
+}
+
+.header_menu li:hover{
+  color: rgb(212, 212, 212);
+}

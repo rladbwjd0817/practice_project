@@ -1,13 +1,38 @@
 import React from 'react'
+import styles from './Header.module.css'
+import '../../reset.css'
+import { Link, useNavigate } from 'react-router-dom'
+
 
 const Header = () => {
+  const nav = useNavigate()
+
   return (
-    <div>
-      <div>
-        {/* 로고 */}
+    <div className={styles.container}>
+
+      <div className={styles.header_logo}>
+        {/* 로고 & name */}
+        <div>
+          <img src="carshop_logo2.png"
+            onClick={e => nav('/')}
+          />
+        </div>
+        <div>
+          <p onClick={e => nav('/velora')}>VELORA</p>
+        </div>
       </div>
-      <div>
+      <div className={styles.header_menu}>
         {/* 메뉴들 */}
+        <ul>
+          <li>Model</li>
+          <li>Buy</li>
+          {/* Cart는 로그인되면 My page로 바뀌기 */}
+          <li>Cart</li>
+          <Link to={'/velora-login'}>
+            <li>Login</li>
+          </Link>
+          <li>Join</li>
+        </ul>
       </div>
     </div>
   )

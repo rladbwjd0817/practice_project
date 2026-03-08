@@ -2,6 +2,7 @@ import React from 'react'
 import { Outlet } from 'react-router-dom'
 import styles from './MainLayout.module.css'
 import Header from './Header'
+import Footer from './Footer'
 
 const MainLayout = () => {
   return (
@@ -9,9 +10,12 @@ const MainLayout = () => {
       <div className={styles.header}>
         {/* 헤더부분 */}
         <Header/>
-    </div>
+      </div>
       <div className={styles.content}>
         <Outlet />
+      </div>
+      <div>
+        <Footer />
       </div>
     </div>
   )
