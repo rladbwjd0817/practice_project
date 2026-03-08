@@ -24,12 +24,12 @@
 
 .login_div{
   background-color: white;
-  border: 1px solid white;
   width: 30%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  border-radius: 3px;
 }
 
 .login_div > div:nth-child(2){
@@ -92,6 +92,11 @@
   font-size: 0.9rem;
 }
 
+.login_search p:hover{
+  cursor: pointer;
+  text-decoration: underline;
+}
+
 .loginBtn_div > button{
   color: gray;
   font-size: 1.1rem;
@@ -117,10 +122,19 @@
 
 .join_div{
   display: flex;
-  gap: 5px;
+  justify-content: center;
+  gap: 3px;
+  font-weight: bold;
+}
+
+.joinInfo_div > p{
+  text-align: center;
 }
 
 .join_div:last-child{
   margin-top: 10px;
 }
 
+.join_div :last-child{
+  margin-top: 5px;
+}

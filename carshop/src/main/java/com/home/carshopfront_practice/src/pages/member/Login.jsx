@@ -24,6 +24,7 @@ const Login = () => {
         </div>
         <div className={styles.loginPw_div}>
           <Input 
+            type='password'
             size='long'
             placeholder= '비밀번호'
           />
