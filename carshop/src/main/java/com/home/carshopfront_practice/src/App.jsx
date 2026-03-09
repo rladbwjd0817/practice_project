@@ -2,6 +2,7 @@ import { Route, Routes } from "react-router-dom"
 import MainLayout from "./components/layout/MainLayout"
 import Landing from "./pages/landing/Landing"
 import Login from "./pages/member/Login"
+import NewModel from "./pages/manage/NewModel"
 
 
 
@@ -14,6 +15,9 @@ function App() {
 
       {/* 메인 페이지*/}
       <Route path="/velora" element={<MainLayout />}>
+
+        {/* 차량등록 페이지 */}
+        <Route path="newModel" element={<NewModel />} />
         
       </Route>
 

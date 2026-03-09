@@ -6,13 +6,16 @@ import { LiaAngleRightSolid } from "react-icons/lia";
 import Input from '../../components/common/Input';
 import { HiOutlineMail } from "react-icons/hi";
 import { MdOutlineLock } from "react-icons/md";
+import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
+  const nav = useNavigate()
+
   return (
     <div className={styles.container}>
       <div className={styles.login_div}>
         <div className={styles.login_logo}>
-          <img src="carshop_logo2.png"/>
+          <img src="carshop_logo2.png" onClick={e => nav('/velora')}/>
         </div>
         <div>VELORA 계정으로 로그인</div>
         <div className={styles.loginEmail_div}>

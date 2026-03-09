@@ -1,10 +1,12 @@
 import React from 'react'
-import { Outlet } from 'react-router-dom'
+import { Outlet, useLocation } from 'react-router-dom'
 import styles from './MainLayout.module.css'
 import Header from './Header'
 import Footer from './Footer'
 
 const MainLayout = () => {
+  const location = useLocation()
+
   return (
     <div className={styles.container}>
       <div className={styles.header}>
@@ -15,7 +17,7 @@ const MainLayout = () => {
         <Outlet />
       </div>
       <div>
-        <Footer />
+        {location.pathname === '/velora' && <Footer />}
       </div>
     </div>
   )

@@ -13,7 +13,7 @@ const Header = () => {
       <div className={styles.header_logo}>
         {/* 로고 & name */}
         <div>
-          <img src="carshop_logo2.png"
+          <img src="/carshop_logo2.png"
             onClick={e => nav('/')}
           />
         </div>
@@ -24,10 +24,10 @@ const Header = () => {
       <div className={styles.header_menu}>
         {/* 메뉴들 */}
         <ul>
-          <li>Model</li>
-          <li>Buy</li>
+          <Link to={'/velora/newModel'}><li>New Model</li></Link>
+          <li>Sales Register</li>
           {/* Cart는 로그인되면 My page로 바뀌기 */}
-          <li>Cart</li>
+          <li>Sales List</li>
           <Link to={'/velora-login'}>
             <li>Login</li>
           </Link>
