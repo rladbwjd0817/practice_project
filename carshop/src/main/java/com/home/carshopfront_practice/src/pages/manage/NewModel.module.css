@@ -15,7 +15,7 @@
 .container{
   width: 100%;
   height: 100vh;
-  background-color: rgb(31, 31, 31);
+  background-color: #19191b;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -32,7 +32,7 @@
 }
 
 .regForm_title_div{
-  background-color: rgba(80, 80, 80, 0.37);
+  background-color: #222428;
   width: 30%;
   display: flex;
   flex-direction: column;
