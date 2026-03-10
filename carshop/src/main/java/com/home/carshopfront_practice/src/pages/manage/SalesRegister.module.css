@@ -1,0 +1,30 @@
+@font-face {
+    font-family: '11StreetGothic';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2601-4@1.1/11StreetGothic-KorLight.woff2') format('woff2');
+    font-weight: 300;
+    font-display: swap;
+}
+
+.container{
+  width: 100%;
+  height: 100vh;
+  background-color: rgb(31, 31, 31);
+  color: white;
+  font-family: '11StreetGothic';
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+.container > h2{
+  font-size: 2.8rem;
+  
+}
+
+.container > div{
+  border: 1px solid white;
+  width: 30%;
+
+}

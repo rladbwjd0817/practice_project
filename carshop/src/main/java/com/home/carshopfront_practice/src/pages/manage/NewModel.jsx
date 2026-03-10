@@ -55,13 +55,6 @@ const NewModel = () => {
             placeholder= '가격을 입력하세요.'
           />
         </div>
-        <div className={styles.carImg_div}>
-          <p>Car Image</p>
-          <Input 
-            type='file'
-            size='long'
-          />
-        </div>
         <div className={styles.regBtn_div}>
           <Button 
             title='Register'

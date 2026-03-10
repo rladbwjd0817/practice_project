@@ -3,6 +3,8 @@ import MainLayout from "./components/layout/MainLayout"
 import Landing from "./pages/landing/Landing"
 import Login from "./pages/member/Login"
 import NewModel from "./pages/manage/NewModel"
+import SalesRegister from "./pages/manage/SalesRegister"
+import SalesList from "./pages/manage/SalesList"
 
 
 
@@ -18,6 +20,12 @@ function App() {
 
         {/* 차량등록 페이지 */}
         <Route path="newModel" element={<NewModel />} />
+
+        {/* 구매자 정보 등록 페이지 */}
+        <Route path="sales-register" element={<SalesRegister />}/>
+
+        {/* 구매자 리스트 페이지 */}
+        <Route path="sales-list" element={<SalesList />}/>
         
       </Route>
 

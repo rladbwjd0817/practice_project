@@ -25,9 +25,9 @@ const Header = () => {
         {/* 메뉴들 */}
         <ul>
           <Link to={'/velora/newModel'}><li>New Model</li></Link>
-          <li>Sales Register</li>
+          <Link to={'/velora/sales-register'}><li>Sales Register</li></Link>
           {/* Cart는 로그인되면 My page로 바뀌기 */}
-          <li>Sales List</li>
+          <Link to={'/velora/sales-list'}><li>Sales List</li></Link>
           <Link to={'/velora-login'}>
             <li>Login</li>
           </Link>
