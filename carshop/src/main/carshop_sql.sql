@@ -18,4 +18,8 @@ CREATE TABLE SALES_INFO(
 
 select * from sales_info;  
 
-# 이미지 쿼리도 있어야 함
+select SALES_NAME, SALES_TEL, SALES_DATE, SALES_COLOR, MODEL_NAME, CAR_PRICE, C.MODEL_NUM
+  from car_info C inner join SALES_INFO S
+    on C.MODEL_NUM  = S.MODEL_NUM
+ order by SALES_DATE desc;
+  

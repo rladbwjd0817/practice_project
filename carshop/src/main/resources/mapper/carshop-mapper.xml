@@ -24,6 +24,16 @@
         )
     </insert>
 
+    <!--차량 목록 조회 쿼리-->
+    <select id="selectCarList" resultMap="carInfo">
+        SELECT MODEL_NUM
+            , MODEL_NAME
+            , CAR_PRICE
+            , MANUFACTURER
+          FROM CAR_INFO
+         ORDER BY MODEL_NUM DESC
+    </select>
+
 
 
 

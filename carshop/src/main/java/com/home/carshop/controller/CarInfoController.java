@@ -6,10 +6,9 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/carshops")
@@ -24,9 +23,24 @@ public class CarInfoController {
   public ResponseEntity<?> regNewModel(@RequestBody CarInfoDTO carInfoDTO){
     try {
       log.info("새로운 차량을 등록합니다.");
+      carInfoService.regNewModel(carInfoDTO);
       return ResponseEntity.status(HttpStatus.CREATED).build();
     }catch (Exception e){
       log.error("차량등록 api 실행 중 오류 발생", e);
+      return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
+    }
+  }
+
+//  차량목록 조회 api
+//  url : (GET) localhost:8080/carshops
+  @GetMapping("")
+  public ResponseEntity<?> selectCarList(){
+    try {
+      log.info("차량 목록 조회를 실행합니다.");
+      List<CarInfoDTO> selectListResult = carInfoService.selectCarList();
+      return ResponseEntity.status(HttpStatus.OK).body(selectListResult);
+    }catch (Exception e){
+      log.error("차량목록 조회 중 오류 발생", e);
       return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
     }
   }

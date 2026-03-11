@@ -1,15 +1,15 @@
 @font-face {
-    font-family: 'NanumSquareNeo';
-    src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-aLt.woff2);
-    font-weight: 300;
-    font-display: swap;
+  font-family: 'NanumSquareNeo';
+  src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-aLt.woff2);
+  font-weight: 300;
+  font-display: swap;
 }
 
 @font-face {
-    font-family: '11StreetGothic';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2601-4@1.1/11StreetGothic-KorLight.woff2') format('woff2');
-    font-weight: 300;
-    font-display: swap;
+  font-family: '11StreetGothic';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2601-4@1.1/11StreetGothic-KorLight.woff2') format('woff2');
+  font-weight: 300;
+  font-display: swap;
 }
 
 .container{
@@ -24,7 +24,7 @@
   gap: 30px;
 }
 
-.container > h2:first-child{
+.container > h2{
   font-size: 2.5rem;
   font-weight: bold;
   font-family: '11StreetGothic';
@@ -91,14 +91,6 @@
   font-weight: 600;
 }
 
-.carImg_div {
-
-}
-
-.carImg_div > input{
-  
-}
-
 .regBtn_div > button{
   color: rgb(0, 0, 0);
   font-size: 1.1rem;
@@ -109,10 +101,56 @@
   height: 40px;
 }
 
+.regCarList_div{
+  width: 30%;
+  
+}
+
 .regCarList_div > h2{
+  font-size: 2.5rem;
+  font-weight: bold;
   margin-bottom: 15px;
   font-family: '11StreetGothic';
   letter-spacing: 0.7px;
+  text-align: center;
 }
 
+.regCarList_div > div {
+  background-color: #222428;
+  padding: 10px 15px;
+  border-radius: 4px;
 
+}
+
+.regCarList_div table{
+  text-align: center;
+}
+
+.newModel_thead tr{
+  border-bottom: 1px solid gray;
+
+}
+
+.newModel_tbody tr{
+  margin-top: 10px;
+  border-bottom: 1px solid gray;
+}
+
+.newModel_thead td {
+  padding-bottom: 13px;
+  font-size: 1.1rem;
+  font-family: '11StreetGothic';
+}
+
+.newModel_thead td:first-child{
+  padding-right: 10px;
+}
+
+.newModel_tbody td{
+  padding-bottom: 5px;
+  font-size: 1.0rem;
+}
+
+.newModel_tbody tr:hover{
+  background-color: rgb(117, 117, 117);
+}
