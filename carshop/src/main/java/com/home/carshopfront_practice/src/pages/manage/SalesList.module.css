@@ -1,0 +1,17 @@
+.container{
+  width: 100%;
+  height: 100vh;
+  background-color: #19191b;
+
+  font-family: '11StreetGothic';
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+.thead_tr > td{
+  background-color: white;
+  
+}

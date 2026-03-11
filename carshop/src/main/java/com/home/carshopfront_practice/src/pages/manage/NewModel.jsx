@@ -3,12 +3,26 @@ import styles from './NewModel.module.css'
 import Button from '../../components/common/Button'
 import Input from '../../components/common/Input';
 import Select from '../../components/common/Select';
+import { postNewCar } from '../../api/carApi';
 
 //////////////////차량등록 & 등록된 차량 조회 페이지///////////////////////
 
 const NewModel = () => {
-  /* 등록된 차량 저장하는 state 변수 */
-  const [regCar, setRegCar] = useState([])
+  /* input에 입력된 차량 데이터 저장하는 state 변수 */
+  const [regCar, setRegCar] = useState({})
+
+  // input에 입력된 차량 데이터 저장하는 변수
+  const newCar = (setRegCar({
+    ...regCar,
+    [e.target.name] : e.target.value
+  }))
+
+  // 신차 등록 실행 함수
+  const insertNewCar = async () => {
+    const response = await postNewCar(regCar);
+    console.log(response.data)
+    setRegCar(response.data)
+  } 
 
   return (
     <div className={styles.container}>
@@ -19,20 +33,15 @@ const NewModel = () => {
         <div className={styles.manufacturer_div}>
           <p>Manufacturer</p>
           {/* select 컴포넌트 */}
-          <Select value='1'>
+          <Select value='1' name='manufacturer' onChange={e => {}}>
             {/* 일단 출력해보고 수정하기 -> value에 regCar에 저장된 제조사 값 꺼내서 넣기'{regCar.manu--}' */}
             {
-              regCar.map((car, index) => {
+              newCar.map((car, index) => {
                 return(
                   <>
                     <option key={index} value="1">선택</option>
                     <option value={car.manufacturer}>기아</option>
                     <option value={car.manufacturer}>현대</option>
-                    <option value={car.manufacturer}>쉐보레</option>
-                    <option value={car.manufacturer}>Benz</option>
-                    <option value={car.manufacturer}>BMW</option>
-                    <option value={car.manufacturer}>Audi</option>
-                    <option value={car.manufacturer}>Volvo</option>
                   </>
                 )
               })
@@ -45,6 +54,8 @@ const NewModel = () => {
           <Input 
             size='long'
             placeholder= '모델명을 입력하세요.'
+            name='carName'
+            onChange={e => {}}
           />
         </div>
         <div className={styles.price_div}>
@@ -53,6 +64,8 @@ const NewModel = () => {
             type='number'
             size='long'
             placeholder= '가격을 입력하세요.'
+            name='carPrice'
+            onChange={e => {}}
           />
         </div>
         <div className={styles.regBtn_div}>
@@ -60,6 +73,7 @@ const NewModel = () => {
             title='Register'
             variant='blue'
             size='small'
+            onClick={e => {insertNewCar()}}
           />
         </div>
       </div>
@@ -76,7 +90,7 @@ const NewModel = () => {
           </thead>
           <tbody>
             {/* map으로 돌려서 등록차량 조회하기 */}
-            {
+            {/* {
               regCar.map((car, i) => {
                 return (
                   <tr key={i}>
@@ -87,7 +101,7 @@ const NewModel = () => {
                   </tr>
                 )
               })
-            }
+            } */}
           </tbody>
         </table>
       </div>
