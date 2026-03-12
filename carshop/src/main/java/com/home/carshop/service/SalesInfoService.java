@@ -5,6 +5,8 @@ import com.home.carshop.mapper.SalesInfoMapper;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 @RequiredArgsConstructor
 public class SalesInfoService {
@@ -13,6 +15,11 @@ public class SalesInfoService {
 //  구매자 등록 기능 실행 메서드
   public void regSales(SalesInfoDTO salesInfoDTO){
     salesInfoMapper.regSales(salesInfoDTO);
+  }
+
+//  구매자 목록 리스트 조회 기능 실행 메서드
+  public List<SalesInfoDTO> salesList(){
+    return salesInfoMapper.salesList();
   }
 
 }

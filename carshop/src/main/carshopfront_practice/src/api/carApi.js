@@ -43,7 +43,8 @@ export const selectModelName = async () => {
 /* 구매자 목록조회 api */
 export const selectSalesList = async () => {
   try{
-
+    const response = await axios.get('http://localhost:8080/sales');
+    return response;
   }catch(e){
     console.log('구매자정보 리스트 조회 중 오류 발생', e)
   }

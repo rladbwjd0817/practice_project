@@ -23,7 +23,7 @@ public class CarInfoService {
   }
 
 //  차량 모델 조회 기능 실행 메서드
-  public List<String> selectModelName(){
+  public List<CarInfoDTO> selectModelName(){
     return carInfoMapper.selectModelName();
   }
 

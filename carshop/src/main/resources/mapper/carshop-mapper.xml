@@ -35,8 +35,8 @@
     </select>
 
     <!--차량 모델 조회 쿼리-->
-    <select id="selectModelName" resultType="String">
-        SELECT MODEL_NAME
+    <select id="selectModelName" resultMap="carInfo">
+        SELECT MODEL_NAME, MODEL_NUM
         FROM CAR_INFO
     </select>
 

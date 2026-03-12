@@ -51,7 +51,7 @@ public class CarInfoController {
   public ResponseEntity<?> selectModelName(){
     try {
       log.info("차량 모델명을 조회합니다.");
-      List<String> carModelList = carInfoService.selectModelName();
+      List<CarInfoDTO> carModelList = carInfoService.selectModelName();
       return ResponseEntity.status(HttpStatus.OK).body(carModelList);
     }catch (Exception e){
       log.error("차량 모델명 조회 중 오류 발생",e);

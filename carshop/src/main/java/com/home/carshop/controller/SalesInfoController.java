@@ -7,10 +7,9 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/sales")
@@ -33,6 +32,19 @@ public class SalesInfoController {
     }
   }
 
+//  구매자 목록 조회 api
+//  url : (GET) localhost:8080/sales
+  @GetMapping("")
+  public ResponseEntity<?> salesList(){
+    try {
+      log.info("구매자 목록을 조회합니다.");
+      List<SalesInfoDTO> salesListResult = salesInfoService.salesList();
+      return ResponseEntity.status(HttpStatus.OK).body(salesListResult);
+    }catch (Exception e){
+      log.error("구매자 목록 조회 중 오류 발생", e);
+      return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
+    }
+  }
 
 
 }

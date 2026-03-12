@@ -15,7 +15,7 @@ public interface CarInfoMapper {
   List<CarInfoDTO> selectCarList();
 
 //  차량모델 조회 쿼리 실행 메서드
-  List<String> selectModelName();
+  List<CarInfoDTO> selectModelName();
 
 
 }

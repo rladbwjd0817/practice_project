@@ -5,6 +5,7 @@ import lombok.Setter;
 import lombok.ToString;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Setter
 @Getter
@@ -16,4 +17,8 @@ public class SalesInfoDTO {
     private String salesColor;
     private LocalDateTime salesDate;
     private int modelNum;
+
+// carInfo 연결
+    private String modelName;
+    private int carPrice;
 }

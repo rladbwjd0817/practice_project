@@ -3,7 +3,7 @@
 
 <!-- 해당 파일에 모든 쿼리문을 작성 -->
 <!-- namespace에는 xml파일과 연결할 Mapper interface 파일명을 패키지를 포함하여 적어주세요 -->
-<mapper namespace="com.home.carshop.mapper.CarInfoMapper">
+<mapper namespace="com.home.carshop.mapper.SalesInfoMapper">
 	<resultMap id="salesInfo" type="com.home.carshop.dto.SalesInfoDTO">
         <id column="SALES_NUM" property="salesNum" />
         <result column="SALES_NAME" property="salesName" />
@@ -11,6 +11,10 @@
         <result column="SALES_COLOR" property="salesColor" />
         <result column="SALES_DATE" property="salesDate" />
         <result column="MODEL_NUM" property="modelNum" />
+
+        <!--조인한 컬럼들-->
+        <result column="MODEL_NAME" property="modelName" />
+        <result column="CAR_PRICE" property="carPrice" />
     </resultMap>
 
     <!--구매자 등록 쿼리-->
@@ -19,18 +23,29 @@
             SALES_NAME
             , SALES_COLOR
             , SALES_TEL
+            , MODEL_NUM
         ) VALUES(
             #{salesName}
             , #{salesColor}
             , #{salesTel}
-            , (
-                SELECT MODEL_NAME
-                FROM CAR_INFO C INNER JOIN SALES_INFO S
-                ON C.MODEL_NUM = S.MODEL_NUM
-                WHERE C.MODEL_NAME = #{modelName}
-            )
+            , #{modelNum}
         )
     </insert>
+
+    <!--구매자 목록 리스트 조회 쿼리-->
+    <select id="salesList" resultMap="salesInfo">
+        SELECT SALES_NUM
+            , SALES_NAME
+            , SALES_TEL
+            , SALES_DATE
+            , SALES_COLOR
+            , MODEL_NAME
+            , CAR_PRICE
+            , C.MODEL_NUM
+        FROM CAR_INFO C INNER JOIN SALES_INFO S
+        ON C.MODEL_NUM  = S.MODEL_NUM
+        ORDER BY SALES_DATE DESC;
+    </select>
 
 
 

@@ -5,6 +5,7 @@ import Login from "./pages/member/Login"
 import NewModel from "./pages/manage/NewModel"
 import SalesRegister from "./pages/manage/SalesRegister"
 import SalesList from "./pages/manage/SalesList"
+import Home from "./pages/home/Home"
 
 
 
@@ -17,6 +18,8 @@ function App() {
 
       {/* 메인 페이지*/}
       <Route path="/velora" element={<MainLayout />}>
+        {/*  홈 화면 */}
+        <Route path="" element={<Home />}/>
 
         {/* 차량등록 페이지 */}
         <Route path="newModel" element={<NewModel />} />
