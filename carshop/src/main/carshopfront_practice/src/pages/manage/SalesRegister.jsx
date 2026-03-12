@@ -1,17 +1,57 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import styles from './SalesRegister.module.css'
 import Select from '../../components/common/Select'
 import Input from '../../components/common/Input'
 import Button from '../../components/common/Button'
+import { postSales, selectModelName } from '../../api/carApi'
 
 // 구매자 등록 페이지 //
 
 const SalesRegister = () => {
-  /* 입력한 구매자 정보 저장할 state 변수 */
-  const [Regsales, setRegSales] = useState({})
+  /* 구매자 정보 저장할 state 변수 */
+  const [regSales, setRegSales] = useState({
+    salesName : '',
+    salesColor : '',
+    modelName : '',
+    salesTel : ''
+  })
 
-  /* 조회한 차량 모델, 색상 데이터 저장할 state 변수 */
-  const [modelAndColor, setModelAndColor] = useState([])
+  /* 조회한 차량 모델리스트 데이터 저장할 state 변수 */
+  const [selectModel, setSelectModel] = useState([])
+
+  // 입력한 구매자 정보 저장할 함수
+  const handleRegSales = (e) => {
+    setRegSales({
+      ...regSales,
+      [e.target.name] : e.target.value
+    })
+  }
+
+  console.log('구매자 정보', regSales);
+
+  // 차량모델 조회 실행 함수
+  const getModelName = async () => {
+    const response = await selectModelName();
+    setSelectModel(response.data)
+  }
+  console.log('차량모델', selectModel)
+
+  
+  // 등록 버튼 클릭 시 등록 실행 할 함수
+  const insertRegSales = async () => {
+    const response = await postSales(regSales);
+    setRegSales(response.data);
+    setRegSales({
+      salesName : '',
+      salesColor : '',
+      modelName : '',
+      salesTel : ''
+    })
+  }
+
+  // 마운트 되었을 때 차량모델 조회 실행
+  useEffect(() => {getModelName()}, [])
+
 
   return (
     <div className={styles.container}>
@@ -23,51 +63,46 @@ const SalesRegister = () => {
             <p>구매자명</p>
             <Input 
               size='medium'
-              value={Regsales.name}
-              onChange={e => {}}
+              name= 'salesName'
+              value={regSales.salesName}
+              onChange={e => {handleRegSales(e)}}
             />
           </div>
           <div className={styles.select_div}>
             <div className={styles.carColor_div}>
               <p>색상</p>
               {/* 조회한 색상 데이터 option에 넣어야 함! */}
-              <Select value='1' className={styles.carColor_select}>
-                
-                {
-                  modelAndColor.map((color, i) => {
-                    return(
-                      <>
-                        <option     
-                          value="1"
-                          key={i}
-                        >선택</option>
-                        <option value="">{color}</option>
-                        <option value="">{color}</option>
-                        <option value="">{color}</option>
-                      </>
-                    )
-                  })
-                }
+              <Select value={regSales.salesColor} 
+                className={styles.carColor_select}
+                name= 'salesColor'
+                onChange={e => {handleRegSales(e)}}
+              >
+                <option value="">선택</option>
+                <option value="White">White</option>
+                <option value="">Black</option>
+                <option value="">Red</option>
               </Select>
             </div>
             <div className={styles.carModel_div}>
               <p>모델</p>
               {/* 조회한 모델 데이터 option에 넣어야 함! */}
-              <Select value='' className={styles.carModel_select}>
+              <Select 
+                value={regSales.modelName} 
+                name= 'modelName'
+                className={styles.carModel_select}
+                onChange={e => {handleRegSales(e)}}
+              >
+                <option 
+                  value="" 
+                >선택</option>
                 {
-                  modelAndColor.map((model, i) => {
+                  selectModel.map((model, i) => {
                     return(
                       <>
                         <option 
+                          key='i' 
                           value=""
-                          key={i}
-                        >선택</option>
-                        <option value="">{model}</option>
-                        <option value="">{model}</option>
-                        <option value="">{model}</option>
-                        <option value="">{model}</option>
-                        <option value="">{model}</option>
-                        <option value="">{model}</option>
+                        >{model}</option>
                       </>
                     )
                   })
@@ -79,8 +114,9 @@ const SalesRegister = () => {
             <p>연락처</p>
             <Input 
               size='medium'
-              value={Regsales.tel}
-              onChange={e => {}}
+              name= 'salesTel'
+              value={regSales.salesTel}
+              onChange={e => {handleRegSales(e)}}
             />
           </div>
           <div className={styles.regBtn_div}>
@@ -88,7 +124,7 @@ const SalesRegister = () => {
               title='Register'
               variant='blue'
               size='small'
-              onClick={e => {}}
+              onChange={e => {handleRegSales(e)}}
             />
           </div>
         </div>

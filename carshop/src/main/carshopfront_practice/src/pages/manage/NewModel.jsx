@@ -31,6 +31,7 @@ const NewModel = () => {
   const insertNewCar = async () => {
     const response = await postNewCar(regCar);
     console.log(response.data)
+    alert('차량 등록이 되었습니다!');
     setRegCar({
       manufacturer : '',
       modelName : '',

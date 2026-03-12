@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import styles from './SalesList.module.css' 
 
+////// 구매자 목록조회 페이지 /////////
+
 const SalesList = () => {
   // 구매자 목록조회 데이터 저장할 state 변수
   const [salesList, setSalesList] = useState([])

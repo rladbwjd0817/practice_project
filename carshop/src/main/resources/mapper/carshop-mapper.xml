@@ -34,6 +34,12 @@
          ORDER BY MODEL_NUM DESC
     </select>
 
+    <!--차량 모델 조회 쿼리-->
+    <select id="selectModelName" resultType="String">
+        SELECT MODEL_NAME
+        FROM CAR_INFO
+    </select>
+
 
 
 

@@ -22,5 +22,10 @@ public class CarInfoService {
     return carInfoMapper.selectCarList();
   }
 
+//  차량 모델 조회 기능 실행 메서드
+  public List<String> selectModelName(){
+    return carInfoMapper.selectModelName();
+  }
+
 
 }

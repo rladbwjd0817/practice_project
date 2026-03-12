@@ -45,6 +45,19 @@ public class CarInfoController {
     }
   }
 
+//  차량 모델명 조회 api
+//  url : (GET) localhost:8080/carshops/models
+  @GetMapping("/models")
+  public ResponseEntity<?> selectModelName(){
+    try {
+      log.info("차량 모델명을 조회합니다.");
+      List<String> carModelList = carInfoService.selectModelName();
+      return ResponseEntity.status(HttpStatus.OK).body(carModelList);
+    }catch (Exception e){
+      log.error("차량 모델명 조회 중 오류 발생",e);
+      return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
+    }
+  }
 
 
 
