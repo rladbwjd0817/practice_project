@@ -118,8 +118,8 @@ const NewModel = () => {
               <colgroup>
                 <col width='5%'/>
                 <col width='15%'/>
-                <col width='20%'/>
                 <col width='*'/>
+                <col width='20%'/>
                 <col width='20%'/>
               </colgroup>
             <thead className={styles.newModel_thead}>

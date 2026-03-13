@@ -1,6 +1,24 @@
+@font-face {
+  font-family: 'NexenTire';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_eight@1.0/NEXEN_TIRE_Regular.woff') format('woff');
+  font-weight: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: '11StreetGothic';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2601-4@1.1/11StreetGothic-KorLight.woff2') format('woff2');
+  font-weight: 300;
+  font-display: swap;
+}
+
 .container{
   width: 100%;
   min-height: 100vh;
+}
+
+.homeImg_div{
+  position: relative;
 }
 
 .homeImg_div > img{
@@ -8,4 +26,61 @@
   height: 600px;
   object-fit: cover;
   object-position: center center;
+}
+
+.homeImg_intro{
+  width: 60%;
+  font-family: 'NexenTire';
+  position: absolute;
+  bottom: 30%;
+  left: 1%;
+}
+
+.homeImg_intro > p:first-child{
+  font-size: 1.5rem;
+  padding-bottom: 15px;
+}
+
+.homeImg_intro > p:nth-child(2){
+  font-size: 2.3rem;
+  padding-bottom: 15px;
+}
+
+.homeImg_intro > p:last-child{
+  font-size: 1.5rem;
+}
+
+.quickMenu{
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
+  gap: 7%
+}
+
+.quickMenu > div{
+  margin-top: 2%;
+  width: 250px;
+  height: 250px;
+  border-radius: 3px;
+  background-color:#bbd5ee;
+  padding: 20px 25px;
+}
+
+.quickMenu > div:hover{
+  background-color: #102650;
+  color: white;
+  transition: all 0.5s ease-in-out;
+  cursor: pointer;
+}
+
+.quickMenu_content{
+  display: flex;
+  gap: 5px;
+  font-size: 1.2rem;
+  font-family: '11StreetGothic';
+  font-weight: bold;
+}
+
+.quickMenu_content :first-child{
+  margin-top: 3px;
 }

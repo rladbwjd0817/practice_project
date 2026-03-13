@@ -178,7 +178,7 @@ const SalesRegister = () => {
             <p>연락처</p>
             <Input 
               size='medium'
-              placeholder=' (선택) 연락처 입력은 선택사항입니다.'
+              placeholder=' (선택) 010-0000-0000.'
               name= 'salesTel'
               value={regSales.salesTel}
               onChange={e => {handleRegSales(e)}}
