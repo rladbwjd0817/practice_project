@@ -71,3 +71,16 @@
   margin-right: 20px;
   cursor: pointer;
 }
+
+.sns_icons:first-child:hover{
+  color: red;
+}
+.sns_icons:nth-child(2):hover{
+  color: rgb(202, 113, 253);
+}
+.sns_icons:nth-child(3):hover{
+  color: rgb(65, 77, 253);
+}
+.sns_icons:last-child:hover{
+  color: rgb(156, 156, 156);
+}

@@ -54,6 +54,7 @@
   font-size: 0.9rem;
   font-family: 'NanumSquareNeo';
   font-weight: 600;
+  width: 450px;
 }
 
 .loginEmail_icon{
@@ -75,6 +76,7 @@
   font-size: 0.9rem;
   font-family: 'NanumSquareNeo';
   font-weight: 600;
+  width: 450px;
 }
 
 .loginPw_icon{

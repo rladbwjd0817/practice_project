@@ -113,7 +113,7 @@ const SalesRegister = () => {
 
   return (
     <div className={styles.container}>
-      <h2>Sales Ragister</h2>
+      <h2>Sales Register</h2>
         <div>
           <div 
             className={styles.salesRegForm_letter_div}
