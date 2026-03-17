@@ -10,11 +10,11 @@ const Landing = () => {
     <div className={styles.container}>
       <div className={styles.homeImg_div}>
         {/* 이미지 */}
-        <img src="bookstore_banner.png"/>
+        <img src="/bookstore_banner.png"/>
       </div>
       
       <div className={styles.homeLogo}>
-        <img src="bookstore_logo_moon.png" />
+        <img src="/bookstore_logo_moon.png" />
       </div>
 
       <div className={styles.title_div}>
@@ -22,7 +22,7 @@ const Landing = () => {
       </div>
 
       <div className={styles.logo_letter}>
-        <img src="bookstore_logo_letter.png"/>
+        <img src="/bookstore_logo_letter.png"/>
       </div>
 
       <div className={styles.btn_div}>

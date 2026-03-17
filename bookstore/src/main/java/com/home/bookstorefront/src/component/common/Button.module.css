@@ -50,6 +50,7 @@
   padding: 0.6rem 1.8rem;
 }
 
+/* 제한 */
 .disabled{
   opacity: 0.7;
   cursor: not-allowed;

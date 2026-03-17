@@ -1,0 +1,145 @@
+@font-face {
+  font-family: 'Ridibatang';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.0/RIDIBatang.woff') format('woff');
+  font-weight: normal;
+  font-display: swap;
+}
+
+.container{
+  font-family: 'Ridibatang';
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #fbf5f5;
+  height: calc(100vh - 82px);
+}
+
+.login_div{
+  width: 420px;
+  border: none;
+  outline: 3px solid white;
+  background-color: #faf6f5;
+  padding: 0px 3%;
+  border-radius: 10px;
+  /* margin-bottom: 200px; */
+}
+
+.login_title{
+  font-size: 2.5rem;
+  text-align: center;
+  margin-top: 40px;
+}
+
+.divider{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px 0 20px 0;
+}
+
+.divider::before, .divider::after{
+  content: "";
+  flex: 1;
+  height: 1px;
+  background-color: #ddd;
+}
+
+.divider span{
+  margin: 0 10px;
+  color: #c8a96a;
+  font-size: 1.1rem;
+}
+
+.id_div{
+  position: relative;
+  font-size: 1.1rem;
+}
+
+.id_div input{
+  padding-left: 30px;
+  margin: 5px 0 20px 0;
+}
+
+.id_icon{
+  position: absolute;
+  top: 45%;
+  color: gray;
+  margin: 0px 10px;
+}
+
+.pw_div{
+  position: relative;
+  font-size: 1.1rem;
+}
+
+.pw_div input{
+  padding-left: 30px;
+  margin: 5px 0 10px 0;
+}
+
+.pw_icon{
+  position: absolute;
+  top: 50%;
+  color: gray;
+  margin: 0px 10px;
+}
+
+.search_div{
+  display: flex;
+  gap: 2px;
+  justify-content: end;
+  margin: 15px 15px;
+  font-size: 0.8rem;
+}
+
+.search_div p:hover{
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.login_btn{
+  border: 2px solid #ffea9b;
+  background-color: #f8cf61;
+  outline: 3px solid #ddaf61;
+  border-radius: 15px;
+  width: 300px;
+  height: 30px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  color: white;
+  font-weight: bold;
+  font-size: 1.2rem;  
+}
+
+.login_btn:hover{
+  cursor: pointer;
+}
+
+.join_infor{
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 0 30px 0;
+}
+
+.goJoin{
+  display: flex;
+  gap: 2px;
+}
+
+.goJoin:hover{
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.goJoin p{
+  margin-top: 2px;
+}
+
+.goJoin_icon{
+  margin-top: 5px;
+}

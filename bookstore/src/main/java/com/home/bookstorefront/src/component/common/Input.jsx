@@ -12,6 +12,7 @@ const Input = ({
         ${styles.input}
         ${styles[size]}
       `}
+      /* default = text 타입 */
       type={type}
       {...props}
     />
