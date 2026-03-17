@@ -31,8 +31,8 @@ const SalesList = () => {
               <col width='20%'/>
               <col width='20%'/>
               <col width='10%'/>
-              <col width='15%'/>
               <col width='*'/>
+              <col width='15%'/>
             </colgroup>
             <thead>
               <tr className={styles.thead_tr}>
