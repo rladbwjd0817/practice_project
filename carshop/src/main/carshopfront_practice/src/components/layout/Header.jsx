@@ -31,7 +31,9 @@ const Header = () => {
           <Link to={'/velora-login'}>
             <li>Login</li>
           </Link>
-          <li>Join</li>
+          <Link to={'/velora-join'}>
+            <li>Join</li>
+          </Link>
         </ul>
       </div>
     </div>

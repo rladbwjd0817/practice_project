@@ -50,7 +50,10 @@ const Login = () => {
           <div className={styles.joinInfo_div}>
             <p>신규 계정 만들기는 글로벌 원아이디인 Velora 계정으로만 만들 수 있습니다.</p>
             <div className={styles.join_div}>
-              <p>Velora 계정 만들기</p>
+              <p 
+                onClick={e => nav('/velora-join')}
+                style={{cursor : 'pointer'}}
+              >Velora 계정 만들기</p>
               <LiaAngleRightSolid />
             </div>
           </div>

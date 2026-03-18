@@ -6,6 +6,7 @@ import NewModel from "./pages/manage/NewModel"
 import SalesRegister from "./pages/manage/SalesRegister"
 import SalesList from "./pages/manage/SalesList"
 import Home from "./pages/home/Home"
+import Join from "./pages/member/Join"
 
 
 
@@ -34,6 +35,7 @@ function App() {
 
       {/* 독립 라우트(헤더/푸터 X) */}
       <Route path="/velora-login" element={<Login />}/>
+      <Route path="/velora-join" element={<Join />} />
 
     </Routes>
   )
