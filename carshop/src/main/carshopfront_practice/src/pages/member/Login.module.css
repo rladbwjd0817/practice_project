@@ -1,15 +1,15 @@
 @font-face {
-    font-family: 'NanumSquareNeo';
-    src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-aLt.woff2);
-    font-weight: 300;
-    font-display: swap;
+  font-family: 'NanumSquareNeo';
+  src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-aLt.woff2);
+  font-weight: 300;
+  font-display: swap;
 }
 
 @font-face {
-    font-family: 'OneStoreMobileGothicTitleFont';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/ONE-Mobile-Title.woff') format('woff');
-    font-weight: normal;
-    font-display: swap;
+  font-family: 'OneStoreMobileGothicTitleFont';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/ONE-Mobile-Title.woff') format('woff');
+  font-weight: normal;
+  font-display: swap;
 }
 
 .container{
