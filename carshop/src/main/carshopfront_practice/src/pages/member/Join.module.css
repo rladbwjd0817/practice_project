@@ -80,6 +80,18 @@
   background-color: rgb(155, 155, 155);
 }
 
+.pw_div{
+  position: relative;
+}
+
+.pw_div button{
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  border: none;
+  font-size: 1.1rem;
+}
+
  .name_div > p{
   margin-bottom: 7px;
  }

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styles from './Join.module.css'
 import Input from '../../components/common/Input'
 import Button from '../../components/common/Button'
@@ -6,9 +6,18 @@ import Select from '../../components/common/Select'
 import { PiWarningCircleLight } from "react-icons/pi";
 import { HiOutlineChevronLeft } from "react-icons/hi2";
 import { Link } from 'react-router-dom'
+import { AiOutlineEye } from "react-icons/ai";
+import { AiOutlineEyeInvisible } from "react-icons/ai";
 
 
 const Join = () => {
+
+  /* 비밀번호 보이기 / 숨김 저장할 state변수 */
+  const [showPw, setShowPw] = useState(false);
+
+  /* 비밀번호 확인 보이기/숨김 데이터 저장할 state 변수 */
+  const [showPwConfirm , setShowPwConfirm] = useState(false);
+
   return (
     <div className={styles.container}>
       <div className={styles.join_div}>
@@ -32,14 +41,32 @@ const Join = () => {
             <Button title='인증요청'/>
           </div> 
 
-          <div>
+          <div className={styles.pw_div}>
             <span className={styles.asterisk}>*</span>
-            <Input type='password' placeholder='비밀번호'/>
+            <Input 
+              type={showPw ? 'text' : 'password'}
+              placeholder='비밀번호'
+            />
+            <button onClick={() => setShowPw(!showPw)}>
+              {/* showPw가 true이면 !true => false, 
+                showPw가 false이면 !false => true 값이 저장
+              */}
+              {showPw ? <AiOutlineEye /> : <AiOutlineEyeInvisible />  }
+            </button>
           </div> 
 
-          <div>
+          <div className={styles.pw_div}>
             <span className={styles.asterisk}>*</span>
-            <Input type='password' placeholder='비밀번호 확인'/>
+            <Input 
+              type={showPwConfirm ? 'text' : 'password'}
+              placeholder='비밀번호 확인'
+            />
+            <button onClick={() => setShowPwConfirm(!showPwConfirm)}>
+              {/* showPw가 true이면 !true => false, 
+                showPw가 false이면 !false => true 값이 저장
+              */}
+              {showPwConfirm ? <AiOutlineEye /> : <AiOutlineEyeInvisible />  }
+            </button>
           </div> 
        </div>
 
