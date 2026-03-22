@@ -24,3 +24,20 @@ select SALES_NAME, SALES_TEL, SALES_DATE, SALES_COLOR, MODEL_NAME, CAR_PRICE, C.
  order by SALES_DATE desc;
   
 
+create table JOIN_MEMBER(
+	MEMBER_NO int primary key auto_increment 
+	, EMAIL VARCHAR(100) not null unique 
+	, PHONE VARCHAR(20) not null
+	, PASSWORD VARCHAR(255) not null 
+	, LAST_NAME VARCHAR(50) not null
+	, FIRST_NAME VARCHAR(50) not null
+	, BIRTH_DATE DATE not null
+	, GENDER ENUM('M', 'F') not null
+	, STATUS ENUM('ACTIVE', 'WITHDRAWN') not null default 'ACTIVE'
+	, ROLE ENUM('USER', 'ADMIN') not null default 'USER'
+	, WITHDRAWN_AT DATETIME null
+	, CREATED_AT DATETIME not null default current_TIMESTAMP
+);
+
+select * from join_MEMBER;
+

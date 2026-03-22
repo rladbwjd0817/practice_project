@@ -25,6 +25,7 @@
 }
 
 .container > h2{
+  margin-top: 50px;
   font-size: 2.5rem;
   font-weight: bold;
   font-family: '11StreetGothic';
@@ -114,12 +115,14 @@
   font-family: '11StreetGothic';
   letter-spacing: 0.7px;
   text-align: center;
+  margin-top: 20px;
 }
 
 .regCarList_div > div {
   background-color: #222428;
   padding: 10px 15px;
   border-radius: 4px;
+  margin-bottom: 50px;
 }
 
 .regCarList_div table{

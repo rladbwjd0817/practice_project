@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 해당 파일에 모든 쿼리문을 작성 -->
+<!-- namespace에는 xml파일과 연결할 Mapper interface 파일명을 패키지를 포함하여 적어주세요 -->
+<mapper namespace="com.home.carshop.mapper.MemberMapper">
+	<resultMap id="salesInfo" type="com.home.carshop.dto.MemberDTO">
+        <id column="MEMBER_NO" property="memberNo" />
+        <result column="EMAIL" property="email" />
+        <result column="COUNTRY_CODE" property="countryCode" />
+        <result column="PHONE" property="phone" />
+        <result column="PASSWORD" property="password" />
+        <result column="LAST_NAME" property="lastName" />
+        <result column="FIRST_NAME" property="firstName" />
+        <result column="BIRTH_DATE" property="birthDate" />
+        <result column="GENDER" property="gender" />
+        <result column="STATUS" property="status" />
+        <result column="ROLE" property="role" />
+        <result column="WITHDRAWN_AT" property="withdrawnAt" />
+        <result column="CREATED_AT" property="createdAt" />
+
+    </resultMap>
+
+    <!--회원 등록 쿼리(회원가입)-->
+    <insert id="join">
+        INSERT INTO JOIN_MEMBER (
+        EMAIL
+        , COUNTRY_CODE
+        , PHONE
+        , PASSWORD
+        , LAST_NAME
+        , FIRST_NAME
+        , BIRTH_DATE
+        , GENDER
+        ) VALUES (
+        #{email}
+        , #{countryCode}
+        , #{phone}
+        , #{password}
+        , #{lastName}
+        , #{firstName}
+        , #{birthDate}
+        , #{gender}
+        )
+    </insert>
+
+
+
+
+
+
+
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
